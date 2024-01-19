@@ -1,0 +1,6 @@
+{
+  "local_ip": "192.168.1.119",
+  "server_ip": "192.168.1.119",
+  "server_port": "10100",
+  "monitor_second": 60
+}
