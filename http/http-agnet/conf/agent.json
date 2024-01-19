@@ -2,5 +2,7 @@
   "local_ip": "192.168.1.119",
   "server_ip": "192.168.1.119",
   "server_port": "10100",
+  "server_api": "/sys/info",
+  "server_ssl": "http",
   "monitor_second": 60
 }

@@ -17,7 +17,7 @@ func main()  {
 		log.Fatalln(err1.Error())
 	}
 	log.Println("INFO: agent start run.")
-	monitorServerURL := "http://"+conf.ConfAgent.ServerIp+":"+conf.ConfAgent.ServerPort+"/api/system/sysinfo"
+	monitorServerURL := conf.ConfAgent.ServerSsl+"://"+conf.ConfAgent.ServerIp+":"+conf.ConfAgent.ServerPort+conf.ConfAgent.ServerApi
 
 	// start goroutine run corntab
 	go func() {

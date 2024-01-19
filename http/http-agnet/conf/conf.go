@@ -19,6 +19,8 @@ type (
 		LocalIp string `json:"local_ip"`
 		ServerIp string `json:"server_ip"`
 		ServerPort string `json:"server_port"`
+		ServerApi string `json:"server_api"`
+		ServerSsl string `json:"server_ssl"`
 		MonitorSecond int64 `json:"monitor_second"`
 	}
 	Process struct {
