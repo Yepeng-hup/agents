@@ -19,7 +19,6 @@ func main()  {
 	log.Println("INFO: agent start run.")
 	monitorServerURL := conf.ConfAgent.ServerSsl+"://"+conf.ConfAgent.ServerIp+":"+conf.ConfAgent.ServerPort+conf.ConfAgent.ServerApi
 
-	// start goroutine run corntab
 	go func() {
 		ticker := time.NewTicker(time.Duration(conf.ConfAgent.MonitorSecond) * time.Second)
 		for range ticker.C {
@@ -33,6 +32,6 @@ func main()  {
 		}
 	}()
 
-	// blocking goroutine
+	// 阻塞
 	select {}
 }
