@@ -4,5 +4,5 @@
   "server_port": "10100",
   "server_api": "/sys/info",
   "server_ssl": "http",
-  "monitor_second": 60
+  "monitor_second": 3
 }

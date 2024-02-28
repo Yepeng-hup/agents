@@ -8,17 +8,16 @@ import (
 )
 
 func main()  {
-	err0 := conf.InitAgentConfig()
-	if err0 != nil {
-		log.Fatalln(err0.Error())
+	if err := conf.InitAgentConfig(); err != nil {
+		log.Fatalln(err.Error())
 	}
-	err1 := conf.InitProcessConfig()
-	if err1 != nil {
-		log.Fatalln(err1.Error())
+	if err := conf.InitProcessConfig(); err != nil {
+		log.Fatalln(err.Error())
 	}
 	log.Println("INFO: agent start run.")
 	monitorServerURL := conf.ConfAgent.ServerSsl+"://"+conf.ConfAgent.ServerIp+":"+conf.ConfAgent.ServerPort+conf.ConfAgent.ServerApi
 
+	// start goroutine run corntab
 	go func() {
 		ticker := time.NewTicker(time.Duration(conf.ConfAgent.MonitorSecond) * time.Second)
 		for range ticker.C {
@@ -32,6 +31,6 @@ func main()  {
 		}
 	}()
 
-	// 阻塞
+	// blocking goroutine
 	select {}
 }
